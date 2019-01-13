@@ -1,7 +1,6 @@
 const request = require('request');
 const mapquest_key = require('../config.js').mapquest_key;
 
-
 var geocodeAddress = (address, callback) => {
   var encoded_address = encodeURIComponent(address);
 
@@ -15,6 +14,7 @@ var geocodeAddress = (address, callback) => {
       callback('Unable to find that address.');
     }else {
       callback(undefined, {
+        address: body.results[0].providedLocation.location,
         longitude: body.results[0].locations[0].latLng.lng,
         latitude: body.results[0].locations[0].latLng.lat
       });
