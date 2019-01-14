@@ -1,4 +1,3 @@
-const request = require('request');
 const yargs = require('yargs');
 const geocode = require('./geocode/geocode.js');
 const weather = require('./weather/weather.js');
