@@ -1,3 +1,4 @@
 **/node_modules
 **/playground
 config.js
+**/server.log
