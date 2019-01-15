@@ -7,6 +7,7 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
 //Must call next, or handlers will never fire
+//Log every request made
 app.use((req,res, next) => {
   var now = new Date().toString();
   var log=`${now}: ${req.method} ${req.url}`
