@@ -40,10 +40,6 @@ socket.on('updateUserList', function(users) {
   jQuery('#users').html(ol);
 });
 
-socket.on('newEmail', function(email){
-  console.log('New email', email);
-}); 
-
 socket.on('newMessage', function(message){
   var formattedTime = moment(message.createdAt).format('h:mm a');
   var template = jQuery('#message-template').html();
@@ -74,7 +70,6 @@ jQuery('#message-form').on('submit', function(e){
 
   var messageTextbox = jQuery('[name=message]');
   socket.emit('createMessage', {
-    from:'User',
     text: messageTextbox.val()
   }, function(){
     messageTextbox.val('')
